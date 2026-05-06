@@ -1,0 +1,16 @@
+[package]
+name = "spatial-xcorr"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Fast distance-resolved spatial gene-pair scoring for spatial transcriptomics data"
+# TODO: set repository URL once the project is published
+# repository = "https://github.com/<owner>/spatial-xcorr"
+
+[lib]
+name = "spatial_xcorr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "spatial-xcorr"
+path = "src/main.rs"
