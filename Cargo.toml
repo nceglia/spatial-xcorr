@@ -14,3 +14,10 @@ path = "src/lib.rs"
 [[bin]]
 name = "spatial-xcorr"
 path = "src/main.rs"
+
+[dependencies]
+ndarray = "0.16"
+sprs = "0.11"
+
+[dev-dependencies]
+approx = "0.5"
