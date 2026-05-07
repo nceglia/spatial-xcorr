@@ -8,9 +8,18 @@
 //! [`fit_exponential_decay`] fits `score(h) = A · exp(-h / λ)` to a sweep of
 //! `(bandwidth, xcorr)` points via closed-form log-linear least squares.
 //!
+//! I/O lives in [`io`] and the cached neighbor lookup lives in [`neighbors`];
+//! both are re-exported at the crate root.
+//!
 //! The graph multiplication in `xcorr` is implemented by manually iterating
 //! sparse rows so this crate does not depend on `sprs`'s ndarray integration
 //! (whose ndarray version may lag behind).
+
+pub mod io;
+pub mod neighbors;
+
+pub use crate::io::{read_dataset, Dataset, IoError};
+pub use crate::neighbors::{build_neighbor_list, NeighborList};
 
 use ndarray::{Array1, ArrayView1, ArrayView2};
 use sprs::{CsMat, TriMat};
